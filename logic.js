@@ -6,16 +6,24 @@
 
 var primes = [2, 3, 5, 7, 11, 13, 17, 19]; 
 var nonPrimes = [1, 4, 6, 8, 9, 10, 12, 14];
-
+console.log(primes);
 nonPrimes.reverse( );              
-var reverseList = nonPrimes.join( );        
-console.log(reverseList);
+ //var reverseList = nonPrimes.join( );        
+ console.log(nonPrimes);
 
-var merged = primes.reduce(function(arr, v, i) {
-                              return arr.concat(v, nonPrimes[i]); 
-                           }, []);
-console.log(merged);
+var sum = primes.map(function (num, i) {
+return num + nonPrimes[i];
 
+// I don't know why this is not consoling unless I manually type it in the browser.
+
+//  [16, 15, 15, 16, 19, 19, 21, 20]
+}); 
+console.log(sum);
+//This is how I zipper merged the array originally when I thought that was the assignment.
+//var merged = primes.reduce(function(arr, v, i) {
+                           //   return arr.concat(v, nonPrimes[i]); 
+                           //}, []);
+//console.log(merged);
 
 
 // 2. Using the following arrays, write a function that merges the numbers
@@ -32,8 +40,11 @@ console.log(merged);
 // Pass your comparison function to Array.prototype.Sort.
 
 
-//var numbers1 = [4, 1, 6, 5, 8]; var numbers2 = [7, 3, 2, 9, 10];
-
+var numbers1 = [4, 1, 6, 5, 8]; var numbers2 = [7, 3, 2, 9, 10];
+var numbers3 = numbers1.concat(numbers2);
+numbers3.sort(function(a, b){return a-b})
+console.log(numbers3);
+ 
 
 
 // Create a constructor for an object called rightTriangle. The constructor
