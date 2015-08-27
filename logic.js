@@ -47,23 +47,55 @@ console.log(numbers3);
  
 
 
-// Create a constructor for an object called rightTriangle. The constructor
+// 3. Create a constructor for an object called rightTriangle. The constructor
 // should take in three parameters, a, b.
+// Give the triangle the properties a, b, c. 
 
-// Give the triangle the properties a, b, c.
+function rightTriangle(a, b,  c) {
+    this.aName = a;
+    this.bName = b;
+    this.cName = 0;
+    
+}
 
 // Now, create a prototyped function called hypotenuse.
 
-// When called, it should check to see if degrees is equal to 90. If so, it
-// will square a, square b, add them together, and set c equal to the square
-// root of their sum.
+ rightTriangle.prototype.hypotenuse = function(){
+ 	this.cName = Math.sqrt((this.aName * this.aName) + (this.bName * this.bName));
+
+}
+
+// When called, it should square a, square b, add them together, and set c
+// equal to the square root of their sum.
 
 // Create a new rightTriangle object, pass in 3 and 4 for the parameters. When
 // you call the object’s hypotenuse function, c should be equal to 5. Call
 // console.log on your object’s c and see if it is 5.
 
-// Write a function that takes a number as a parameter. If the number is 0,
+
+var newRightTriangle = new rightTriangle(3,4);
+newRightTriangle.hypotenuse();
+console.log(newRightTriangle);
+
+// 4. Write a function that takes a number as a parameter. If the number is 0,
 // just return 0, otherwise return the number.
+
+var numberParam = function(number){
+
+	if (number == 0){
+		
+		return 0;
+	
+	}
+ 	else {
+
+		return number + numberParam(number - 1);
+	}
+ 	}
+ 
+console.log(numberParam(13));
+
+
 
 // Now we’re going to use something called recursion. A function that calls
 // itself to do some work on a new value is recursive.
